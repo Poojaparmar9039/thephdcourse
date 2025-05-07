@@ -1,0 +1,159 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'checkout.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <div class="checkout-body">
+        <section>
+            <div class="first-section">
+                <p id="heading">CONGRATS! YOU ARE JUST ONE STEP AWAY FROM MASTERING AI TOOLS</p>
+                <div class="offer-detail">
+                  <div class="offer-one">
+                     <p>Anyone from any field can attend this workshop. Simply Pay <span id="amount">₹899</span> and Get Started</p>
+                  </div>
+                   <div class="offer-two">
+                     <h1> Simply Pay <span id="amount">₹899</span> <span> ₹1599</span> and Get Started</h1>
+                   </div>
+                </div>
+                <div class="billing-details">
+                    <h1>Billing details</h1>
+                    <form action="{% url 'submit_data' %}" enctype="multipart/form-data" method="post">
+                        {% csrf_token %}
+                       <div class="form-data">
+                        <!-- {% if message %}
+  <div class="alert alert-success">{{ message }}</div>
+{% endif %} -->
+                            <label for="fullname">Full Name <span id="recquired">*</span></label>
+                            <input type="text" name="fullname" id="fullname" placeholder="Enter your name" autocomplete="on" required>
+                            <label for="phone">Phone Number <span id="recquired">*</span></label>
+                            <input type="number" name="phone" id="phone" placeholder="Enter the phone number" autocomplete="on" required>
+                            <label for="email">Email Address <span id="recquired">*</span></label>
+                            <input type="email" name="email" id="email" placeholder="Enter the email" autocomplete="on"  required>      
+                       </div>
+                       <div class="form-table">
+                        <table>
+                            <tr>
+                                <td>Product</td>
+                                <td>Subtotal</td>
+                            </tr>
+                            <tr>
+                            <td>The AI Researcher's Toolkit for 10X faster Research  × 1</td>
+                            <td>₹899.00</td>
+                            </tr>
+                            <tr>
+                                <td>Subtotal</td>
+                                <td>₹899.00</td>
+                            </tr>
+                            <tr>
+                                <td>Total</td>
+                                <td>₹899.00</td>
+                            </tr>
+                        </table>
+                            <div class="submit-button">
+                               <button id="place-button" type="submit">Place order</button>
+                            </div>
+                       </div>    
+                </form>
+                </div>
+            </div>
+        </section>
+        <div class="notice">
+            <p><span>Important:</span> If you are not from India and facing any problem in making the payment, please Whatsapp us on <span>+91964405667</span>, we will not only help you in making the payment for the course but will also give you 10% discount.</p>
+        </div>
+
+       <section>
+        <div class="second-section">
+          
+            <div class="warranty-section">
+                <img id="warranty" src="https://research.thephdcoaches.com/wp-content/uploads/2024/12/bbb418fd1569b33c46d39ffd93977bfb.webp" alt="Warranty seal">
+                <h1 id="money-back">100% Money Back Guarantee</h1>
+                <p id="warranty-content">Yes, I am that confident in the value I provide, People who attend this workshop has shown 99.75% Satisfaction rate, And I am sure you too will get immense value out of it.
+                If for some reason, you feel this is not worth it & I've wasted your time & money, I will see to it personally that you get a 100% refund ASAP.</p>
+            </div>
+        </div>
+       </section>
+       <section>
+        <div class="third-section">
+            <div class="card-section">
+                <div class="card">
+                    <div class="bonus-head">
+                       🎁Bonus #1
+                    </div>
+                   <div class="bonus-data">
+                    Mastery of Over 10 AI Tools for Research
+                    <span> ₹2500  </span>
+                   </div>
+                </div>
+                <div class="card">
+                    <div class="bonus-head">
+                       🎁Bonus #2
+                    </div>
+                  <div class="bonus-data">
+                    Mastering Research Methodology: A Comprehensive Blueprint
+                    <span>₹1515</span>
+                  </div>
+                </div>
+                <div class="card"> 
+                  <div class="bonus-head">
+                      🎁Bonus #3
+                   </div>
+                      <div class="bonus-data">
+                        AI Writing Powerhouse: Top GPT Tools Unleashed
+                        <span>₹3000</span>
+                      </div>
+                </div>
+                <div class="card">
+                  <div class="bonus-head">
+                      🎁Bonus #4
+                   </div>
+                 <div class="bonus-data">
+                    AI-Powered Academic Writing: Unlocking Efficiency and Insight with ChatGPT
+                    <span>₹2500</span>
+                 </div>
+                </div>
+                <div class="card">
+                  <div class="bonus-head">
+                      🎁Bonus #5
+                   </div>
+                 <div class="bonus-data">
+                    Mastering the Art of Contents: A Guide to AI-Enhanced Academic Writing
+                    <span>₹2500</span>
+                 </div>
+                </div>
+            </div>
+          </div>
+       </section>
+     <section>
+        <div class="fourth-section">
+            <div class="detail-card">
+                <img src="https://research.thephdcoaches.com/wp-content/uploads/2025/01/svgviewer-png-output-1.png" alt="">
+                <p>Your Data is Safe With Us</p>
+            </div>
+            <div class="detail-card">
+                <img src="https://research.thephdcoaches.com/wp-content/uploads/2025/01/svgviewer-png-output.png" alt="">
+                <p>We Protect Your Privacy</p>
+            </div>
+            <div class="detail-card">
+                <img src="https://research.thephdcoaches.com/wp-content/uploads/2025/01/image_2024_09_16T17_32_40_021Z-1.png" alt="">
+                <p>100% Satisfaction Guaranteed</p>
+            </div>
+            
+            <div class="badge">
+                <img src="https://research.thephdcoaches.com/wp-content/uploads/2025/01/security-public-1.webp" alt="">
+            </div>
+            <div class="security">
+                <p>
+                    <span>100% Secure Transaction.</span>
+                    All orders are through Razorpay, a very secure network. Your credit card information is never stored in any way. We respect your privacy.</p>
+            </div>
+           </div>
+     </section>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Processing Payment</title>
+</head>
+<body>
+    <form name="razorpay-form" action="{% url 'payment_success' %}" method="POST">
+        {% csrf_token %}
+        <input type="hidden" name="razorpay_order_id" value="{{ order_id }}">
+        <input type="hidden" name="razorpay_payment_id" id="razorpay_payment_id">
+        <input type="hidden" name="razorpay_signature" id="razorpay_signature">
+    </form>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script>
+        var options = {
+            key: '{{ razorpay_key }}',
+            amount: '{{ amount }}',
+            currency: 'INR',
+            name: '{{ fullname }}',
+            description: 'AI Researcher Workshop',
+            order_id: '{{ order_id }}',
+            handler: function (response) {
+                document.getElementById('razorpay_payment_id').value = response.razorpay_payment_id;
+                document.getElementById('razorpay_signature').value = response.razorpay_signature;
+                document.forms['razorpay-form'].submit();
+            },
+            prefill: {
+                name: '{{ fullname }}',
+                email: '{{ email }}',
+                contact: '{{ phone }}'
+            },
+            theme: {
+                color: "#F37254"
+            },
+            modal: {
+                ondismiss: function () {
+                    // Notify the server to mark the order as failed
+                    fetch("{% url 'payment_failed_api' %}", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                            "X-CSRFToken": "{{ csrf_token }}"
+                        },
+                        body: JSON.stringify({
+                            order_id: "{{ order_id }}"
+                        })
+                    }).then(() => {
+                        window.location.href = "{% url 'payment_failed' %}";
+                    });
+                }
+            }
+        };
+        var rzp1 = new Razorpay(options);
+        rzp1.open();
+    </script>
+</body>
+</html>

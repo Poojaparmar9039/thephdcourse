@@ -1,0 +1,79 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ThePhDCourse Admin Dashboard</title>
+    <link rel="stylesheet" href="{% static 'admin.css' %}">
+</head>
+<body>
+    <div class="container mt-5">
+    <a href="{% url 'dashboard_page' %}"><h2 class="mb-4">Admin Dashboard - ThePhDCourse</h2></a>
+        <div class="row mb-4">
+            <div class="col-md-3">
+                <div class="card text-white bg-success">
+                    <a href="{% url 'completed_accounts_page' %}">
+                       <div class="card-body">
+                         <h5>Completed</h5>
+                         <p class="display-6">{{ completed_no }}</p>
+                       </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card text-white bg-danger">
+                    <a href="{% url 'failed_accounts_page' %}">
+                    <div class="card-body">
+                        <h5>Failed</h5>
+                        <p class="display-6">{{ failed_no }}</p>
+                    </div>
+                </a>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card text-white bg-warning">
+                   <a href="{% url 'pending_accounts_page' %}">
+                    <div class="card-body">
+                        <h5>Pending</h5>
+                        <p class="display-6">{{ pending_no }}</p>
+                    </div>
+                   </a>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card text-white bg-primary">
+                    <div class="card-body">
+                        <h5>Processing</h5>
+                        <p class="display-6">{{ processing_no }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header bg-dark text-white">User Purchase Details</div>
+            <div class="card-body">
+                <table class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>User Name</th>
+                            <th>Email</th>
+                            <th>Purchases</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                      {% for account in account_details %}
+                      <tr>
+                         <td>{{ account.fullname }}</td>
+                         <td>{{ account.email }}</td>
+                         <td>{{ account.purchase_number }}</td>
+                         <td><span class="status {{ account.status|lower }}">{{ account.status }}</span></td>
+                      </tr>
+                      {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

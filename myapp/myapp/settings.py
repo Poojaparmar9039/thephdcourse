@@ -126,19 +126,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 
-import os
-
-RAZORPAY_KEY_ID = os.getenv('RAZORPAY_KEY_ID', 'rzp_test_GJR8WcLMutqjRl')
-RAZORPAY_KEY_SECRET = os.getenv('RAZORPAY_KEY_SECRET', 'rahH96YyXm6Ea51wv9gRR7sq')
 
 
 
 
-
-EMAIL_BACKEND='django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST='smtp.gmail.com'
-EMAIL_PORT=587
-EMAIL_USE_TLS = True
-EMAIL_HOST_USER='poojaaddneo@gmail.com'
-EMAIL_HOST_PASSWORD='ihlj lfkq xvyj luns'
-DEFAULT_FROM_EMAIL=EMAIL_HOST_USER

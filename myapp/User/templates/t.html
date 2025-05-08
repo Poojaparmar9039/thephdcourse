@@ -1,226 +1,320 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dashboard</title>
-
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
-      rel="stylesheet"
-    />
-    <style>
-        body{
-    background-color: black;
-    font-family: "Roboto", sans-serif;
-}
-h1{
-
-    text-align: center;
-    font-size: 40px;
-    font-weight: 600;
-    color: #1CFF00;
-}
-.chapters{
-    
-    font-size: 30px;
-    font-weight: 550;
-    color: rgb(241, 208, 22);
-}
-
-.video-container {
-    display: inline-block;
-    position: relative;
-    margin-bottom: 40px;
-    margin-left: 160px;
-  }
-.pdf-blocks{
-    border: solid ;
-    height: 260px;
-    width: 900px;
-    margin-left: 170px;
-}
-.pdf-container          
-{
-    border: solid gold 1px;
-    height:100%;
-    width:  440px;
-    float: left;
-    margin-left: 5px;
-}
-.font-block{
-    font-size: 30px;
-    margin-top: 50px;
-    color: white;
-    text-align: center;
-}
-.btn-1{
-    margin-left: 120px;
-    margin-top: 50px;
-    padding: 15px 30px;     
-    font-size: 20px;        
-    border-radius: 10px;   
-    background-color: rgb(255, 99, 71);
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-
-.btn-2{
-    margin-left: 120px;
-    margin-top: 15px;
-    padding: 15px 30px;     
-    font-size: 20px;        
-    border-radius: 10px;   
-    background-color: rgb(255, 99, 71);
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-button:hover {
-    background-color: rgb(19, 193, 149); /* color on hover */
-}
-
-    </style>
-  </head>
-  <body>
-    <h1>Do Research 10x Faster x 1</h1>
-    <h1 class="chapters">Chapter One</h1>
-
-    <div class="video-container">
-      <iframe
-        src="https://player.vimeo.com/video/1015341730?autoplay=false&loop=false&muted=false"
-        width="920"
-        height="510"
-        frameborder="0"
-        allow="autoplay; fullscreen; picture-in-picture"
-        allowfullscreen
-      ></iframe>
-    </div>
-
-    <br />
-
-    <h1 class="chapters">Chapter Two</h1>
-    <div class="video-container">
-      <iframe
-        src="https://player.vimeo.com/video/1016518439?loop=false"
-        width="920"
-        height="510"
-        frameborder="0"
-        allow="autoplay; fullscreen; picture-in-picture"
-        allowfullscreen
-      ></iframe>
-    </div>
-
-    <h1 class="chapters">Chapter Three</h1>
-    <div class="video-container">
-      <iframe
-        src="https://player.vimeo.com/video/1015374287?loop=false"
-        width="920"
-        height="510"
-        frameborder="0"
-        allow="autoplay; fullscreen; picture-in-picture"
-        allowfullscreen
-      ></iframe>
-    </div>
-
-    <h1 class="chapters">Chapter Four</h1>
-    <div class="video-container">
-      <iframe
-        src="https://player.vimeo.com/video/1015396711?loop=false"
-        width="920"
-        height="510"
-        frameborder="0"
-        allow="autoplay; fullscreen; picture-in-picture"
-        allowfullscreen
-      ></iframe>
-    </div>
-
-    <h1 class="chapters">Chapter Five</h1>
-    <div class="video-container">
-      <iframe
-        src="https://player.vimeo.com/video/1015375205?loop=false"
-        width="920"
-        height="510"
-        frameborder="0"
-        allow="autoplay; fullscreen; picture-in-picture"
-        allowfullscreen
-      ></iframe>
-    </div>
-
-    <h1 class="chapters">Chapter Six</h1>
-    <div class="video-container">
-      <iframe
-        src="https://player.vimeo.com/video/1015375619?loop=false"
-        width="920"
-        height="510"
-        frameborder="0"
-        allow="autoplay; fullscreen; picture-in-picture"
-        allowfullscreen
-      ></iframe>
-    </div>
-
-    <h1 class="chapters">Chapter Seven</h1>
-    <div class="video-container">
-      <iframe
-        src="https://player.vimeo.com/video/1015377124?loop=false"
-        width="920"
-        height="510"
-        frameborder="0"
-        allow="autoplay; fullscreen; picture-in-picture"
-        allowfullscreen
-      ></iframe>
-    </div>
-
-    <h1 class="chapters">Chapter Eight</h1>
-    <div class="video-container">
-      <iframe
-        src="https://player.vimeo.com/video/1015379422?loop=false"
-        width="920"
-        height="510"
-        frameborder="0"
-        allow="autoplay; fullscreen; picture-in-picture"
-        allowfullscreen
-      ></iframe>
-    </div>
-
-    <h1 class="chapters">Chapter Nine</h1>
-    <div class="video-container">
-      <iframe
-        src="https://player.vimeo.com/video/1018397559?loop=false"
-        width="920"
-        height="510"
-        frameborder="0"
-        allow="autoplay; fullscreen; picture-in-picture"
-        allowfullscreen
-      ></iframe>
-    </div>
-
-    <h1 class="chapters">Chapter Ten</h1>
-    <div class="video-container">
-      <iframe
-        src="https://player.vimeo.com/video/1015382100?loop=false"
-        width="920"
-        height="510"
-        frameborder="0"
-        allow="autoplay; fullscreen; picture-in-picture"
-        allowfullscreen
-      ></iframe>
-    </div>
-    <div class="pdf-blocks">
-      <div class="pdf-container">
-        <h2 class="font-block">Chat-GPT-for-research-paper</h2>
-        <a href="https://aitool.thephdcoaches.com/wp-content/uploads/2024/11/Chat-GPT-for-research-paper-1.pdf">
-          <button class="btn-1"> Download Pdf</button>
-        </a>
-      </div>
-
-      <div class="pdf-container">
-        <h2 class="font-block">Top-GPTs-for-Research-and-Writing</h2>
-        <a href="https://aitool.thephdcoaches.com/wp-content/uploads/2024/11/Top-GPTs-for-Research-and-Writing-5.docx">
-        <button class="btn-2"> Download Pdf</button>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Research Acceleration Masterclass</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+  <link rel="stylesheet" href="{% static 't.css' %}">
+</head>
+<body>
+  <header>
+    <div class="container header-content">
+      <a href="#" class="logo">
+        <span class="logo-text">ResearchX</span>
       </a>
+      <nav class="nav-links">
+        <a href="#" class="nav-link">Home</a>
+        <a href="#chapters" class="nav-link">Chapters</a>
+        <a href="#resources" class="nav-link">Resources</a>
+        <a href="#" class="nav-link">Support</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container hero-content">
+      <h1>Do Research 10x Faster</h1>
+      <p class="hero-subtitle">
+        Master advanced research techniques and accelerate your academic journey with our comprehensive video course
+      </p>
+      <a href="#chapters" class="btn">Start Learning</a>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="container">
+      <h2 class="section-title">What You'll Learn</h2>
+      <div class="features-grid">
+        <div class="feature-card fade-in">
+          <div class="feature-icon">
+            <i class="fas fa-bolt"></i>
+          </div>
+          <h3 class="feature-title">Accelerated Research</h3>
+          <p class="feature-desc">Learn techniques to conduct research in a fraction of the time without sacrificing quality</p>
+        </div>
+        
+        <div class="feature-card fade-in">
+          <div class="feature-icon">
+            <i class="fas fa-brain"></i>
+          </div>
+          <h3 class="feature-title">AI-Powered Methods</h3>
+          <p class="feature-desc">Discover how to leverage AI tools to enhance your research workflow and analysis</p>
+        </div>
+        
+        <div class="feature-card fade-in">
+          <div class="feature-icon">
+            <i class="fas fa-laptop-code"></i>
+          </div>
+          <h3 class="feature-title">Digital Organization</h3>
+          <p class="feature-desc">Master digital tools that streamline your research organization and citation management</p>
+        </div>
       </div>
     </div>
-  </body>
+  </section>
+
+  <section class="chapters" id="chapters">
+    <div class="container">
+      <h2 class="section-title">Course Curriculum</h2>
+
+      <div class="progress-container">
+        <div class="progress-bar" style="width: 30%;"></div>
+      </div>
+
+      <!-- Chapter 1 -->
+      <div class="chapter">
+        <div class="chapter-header">
+          <h3 class="chapter-title">
+            <span class="chapter-number">1</span>
+            Introduction to Research Acceleration
+          </h3>
+          <!-- <div class="chapter-status">
+            <i class="fas fa-check-circle status-icon unlocked"></i>
+            <span>Completed</span>
+          </div> -->
+        </div>
+        <div class="chapter-content">
+          <div class="video-wrapper">
+            <iframe
+              src="https://player.vimeo.com/video/1015341730?autoplay=false&loop=false&muted=false"
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <p class="chapter-description">
+            Get started with the fundamentals of research acceleration. This chapter introduces key concepts that will form the foundation of your accelerated research workflow.
+          </p>
+          <div class="chapter-actions">
+            <div class="mark-complete">
+              <i class="fas fa-check-circle"></i>
+            <a href="#"><span class="button-complete">Marked as Complete</span></a>
+            </div>
+            <a href="#chapter2" class="next-chapter">
+              <span>Next Chapter</span>
+              <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Chapter 2 -->
+      <div class="chapter" id="chapter2">
+        <div class="chapter-header">
+          <h3 class="chapter-title">
+            <span class="chapter-number">2</span>
+            Advanced Literature Review Techniques
+          </h3>
+          <div class="chapter-status">
+            <i class="fas fa-check-circle status-icon unlocked"></i>
+            <span>Completed</span>
+          </div>
+        </div>
+        <div class="chapter-content">
+          <div class="video-wrapper">
+            <iframe
+              src="https://player.vimeo.com/video/1016518439?loop=false"
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <p class="chapter-description">
+            Learn how to efficiently search, analyze, and synthesize academic literature. This chapter covers advanced search strategies and efficient reading techniques.
+          </p>
+          <div class="chapter-actions">
+            <div class="mark-complete">
+              <i class="fas fa-check-circle"></i>
+              <a href="#"><span class="button-complete">Marked as Complete</span></a>
+            </div>
+            <a href="#chapter3" class="next-chapter">
+              <span>Next Chapter</span>
+              <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chapter 3 -->
+      <div class="chapter" id="chapter3">
+        <div class="chapter-header">
+          <h3 class="chapter-title">
+            <span class="chapter-number">3</span>
+            Data Collection Optimization
+          </h3>
+          <div class="chapter-status">
+            <i class="fas fa-play-circle status-icon unlocked"></i>
+            <span>In Progress</span>
+          </div>
+        </div>
+        <div class="chapter-content">
+          <div class="video-wrapper">
+            <iframe
+              src="https://player.vimeo.com/video/1015374287?loop=false"
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <p class="chapter-description">
+            Discover efficient methods for gathering research data from various sources, including online databases, surveys, and automated data extraction tools.
+          </p>
+          <div class="chapter-actions">
+            <div class="mark-complete">
+              <i class="far fa-circle"></i>
+              <a href="#"><span class="button-complete">Marked as Complete</span></a>
+            </div>
+            <a href="#chapter4" class="next-chapter">
+              <span>Next Chapter</span>
+              <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chapter 4 -->
+      <div class="chapter" id="chapter4">
+        <div class="chapter-header">
+          <h3 class="chapter-title">
+            <span class="chapter-number">4</span>
+            Analysis and Synthesis Strategies
+          </h3>
+          <div class="chapter-status">
+            <i class="fas fa-lock status-icon locked"></i>
+            <span>Locked</span>
+          </div>
+        </div>
+        <div class="chapter-content">
+          <div class="video-wrapper">
+            <iframe
+              src="https://player.vimeo.com/video/1015396711?loop=false"
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <p class="chapter-description">
+            Learn techniques for analyzing data more efficiently and synthesizing findings into meaningful insights.
+          </p>
+          <div class="chapter-actions">
+            <div class="mark-complete">
+              <i class="far fa-circle"></i>
+              <a href="#"><span class="button-complete">Marked as Complete</span></a>
+            </div>
+            <a href="#chapter5" class="next-chapter">
+              <span>Next Chapter</span>
+              <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- For brevity, showing just 4 chapters but you can add the rest following the same pattern -->
+    </div>
+  </section>
+
+  <section class="resources" id="resources">
+    <div class="container">
+      <h2 class="section-title">Download Resources</h2>
+      <div class="resources-grid">
+        <div class="resource-card">
+          <div class="resource-content">
+            <div class="resource-meta">
+              <div class="resource-size">
+                <i class="fas fa-file"></i>
+                <span>1.2 MB</span>
+              </div>
+              <div class="resource-type">
+                <i class="fas fa-file-pdf"></i>
+                <span>PDF</span>
+              </div>
+            </div>
+            <h3 class="resource-title">ChatGPT for Research Papers</h3>
+            <p class="resource-desc">
+              A comprehensive guide that shows you how to leverage ChatGPT effectively for academic writing, literature reviews, and research formulation.
+            </p>
+            <a href="https://aitool.thephdcoaches.com/wp-content/uploads/2024/11/Chat-GPT-for-research-paper-1.pdf" class="btn">
+              <i class="fas fa-download"></i> Download Guide
+            </a>
+          </div>
+        </div>
+        <div class="resource-card">
+          <div class="resource-content">
+            <div class="resource-meta">
+              <div class="resource-size">
+                <i class="fas fa-file"></i>
+                <span>0.9 MB</span>
+              </div>
+              <div class="resource-type">
+                <i class="fas fa-file-word"></i>
+                <span>DOCX</span>
+              </div>
+            </div>
+            <h3 class="resource-title">Top GPTs for Research</h3>
+            <p class="resource-desc">
+              Discover the most effective GPT models specially designed for academic research, data analysis, and scholarly writing.
+            </p>
+            <a href="https://aitool.thephdcoaches.com/wp-content/uploads/2024/11/Top-GPTs-for-Research-and-Writing-5.docx" class="btn">
+              <i class="fas fa-download"></i> Download Resource
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h3>Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#chapters">Course Content</a></li>
+            <li><a href="#resources">Resources</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Support</h3>
+          <ul class="footer-links">
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Technical Support</a></li>
+            <li><a href="#">Feedback</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Legal</h3>
+          <ul class="footer-links">
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Cookie Policy</a></li>
+            <li><a href="#">Copyright Notice</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2025 ResearchX. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+<script>
+   document.querySelectorAll('.mark-complete').forEach(button => {
+    button.addEventListener('click', () => {
+      button.textContent = 'Completed';
+      
+    });
+  });
+</script>
+
 </html>

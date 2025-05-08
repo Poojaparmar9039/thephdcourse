@@ -30,7 +30,7 @@ def user_created_password(request):
         if not email:
             return render(request, 'email_verify.html', {'message': 'Session expired. Please verify your email again.'})
         try:
-            user = user_details.objects.get(email=email)
+            user = user_details.objects.filter(email=email).first()
             user.password = make_password(password)
             user.save()
             del request.session['verified_email']
@@ -51,15 +51,17 @@ def user_login_verification(request):
         email = request.POST.get('email')
         password = request.POST.get('password')
 
-        try:
-            user = user_details.objects.get(email=email)
-            if user.password and check_password(password, user.password):
-                request.session['user_email'] = user.email
-                return redirect('user_dashboard')  # Use name from urls.py
-            else:
-                return render(request, 'login.html', {'message': 'Invalid password'})
-        except user_details.DoesNotExist:
+        user = user_details.objects.filter(email=email).first()
+        if user is None:
             return render(request, 'login.html', {'message': 'Email not registered'})
+        if user.password is None:
+            return render(request, 'login.html', {'message': 'password not registered'})
+
+        if check_password(password, user.password):
+            request.session['user_email'] = user.email
+            return redirect('user_dashboard')
+        else:
+            return render(request, 'login.html', {'message': 'Invalid password'})
 
     return render(request, 'login.html')
 
@@ -75,10 +77,16 @@ def user_dashboard(request):
         return redirect('login_page')
 
 
+
+
 def logout_view(request):
     request.session.flush()
     return redirect('login_page')
 
 
-def tp(request):
+
+
+
+
+def course_dashboard(request):
     return render(request,'t.html')

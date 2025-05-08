@@ -113,7 +113,7 @@ def payment_failed(request):
 
 def payment_successful(request):
     # return render(request, 'payment_successful.html')
-    return render(request,'email_verify.html')
+    return render(request,'login.html')
 
 
 def send_email_to_user(user):
@@ -145,7 +145,7 @@ def send_email_to_admin(user):
             Best regards,  
             Your Automated Notification System
             """
-    admin_email = 'dharamsinghweb@gmail.com'  
+    admin_email = 'poojaparmar9753@gmail.com'  
     send_mail(subject, message, EMAIL_HOST_USER, [admin_email])
 
 

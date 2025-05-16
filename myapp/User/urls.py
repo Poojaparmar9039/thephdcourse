@@ -11,7 +11,9 @@ urlpatterns = [
     path('dashboard/', views.user_dashboard, name='user_dashboard'),
     path('logout/', views.logout_view, name='logout_view'),
     path('course_dashboard/',views.course_dashboard,name='course_dashboard'),
-    
+    path('mark_module_complete/<int:module_id>/', views.mark_module_complete, name='mark_module_complete'),
+    path('my_course/',views.my_course,name='my_course'),
+    path('show_orderkey/',views.show_orderkey,name='show_orderkey'),
 ]
 
 

@@ -9,7 +9,7 @@ from django.conf.global_settings import EMAIL_HOST_USER
 from django.core.mail import send_mail
 import random
 import string
-
+from datetime import datetime
 
 # Initialize Razorpay client
 client = razorpay.Client(auth=(settings.RAZORPAY_KEY_ID, settings.RAZORPAY_KEY_SECRET))
@@ -29,15 +29,30 @@ def submit_data(request):
         phone = request.POST.get("phone")
         email = request.POST.get("email")
 
-        # Create or get user
-        user, _ = user_details.objects.get_or_create(email=email, fullname=fullname, phone=phone)
-        user.status = 'Pending'
+        # Look up the user by email
+        user = user_details.objects.filter(email=email).first()
+
+        if not user:
+            # Create a new user if email not found
+            user = user_details.objects.create(
+                fullname=fullname,
+                phone=phone,
+                email=email,
+                status='Pending',
+                purchase_number=0
+            )
+        else:
+           
+            user.purchase_number = (user.purchase_number or 0) + 1
+            user.created_at=datetime.now()
+            user.status = 'Pending'
+
         user.save()
 
-        # Create Razorpay order
+     
         amount = 100  # in paise (₹1.00)
         currency = 'INR'
-        receipt = f"user_{user.id}"
+        receipt = f"user_{user.id}_purchase_{user.purchase_number}"
 
         razorpay_order = client.order.create({
             "amount": amount,
@@ -52,12 +67,13 @@ def submit_data(request):
         context = {
             'order_id': razorpay_order['id'],
             'amount': amount,
-            'fullname': fullname,
-            'email': email,
-            'phone': phone,
+            'fullname': user.fullname,
+            'email': user.email,
+            'phone': user.phone,
             'razorpay_key': settings.RAZORPAY_KEY_ID,
         }
         return render(request, 'checkout_redirect.html', context)
+
 
 
 @csrf_exempt
@@ -154,7 +170,14 @@ def generate_orderkey(user_id):
     letters = string.ascii_letters  # a-z + A-Z
     digits = string.digits
     random_part = ''.join(random.choices(letters + digits + special_chars, k=6))
-    return f"{user_id}-{random_part}"
+    orderkey=f"{user_id}-{random_part}"
+    try:
+        user = user_details.objects.get(id=user_id)
+        user.orderkey = orderkey
+        user.save()
+        return orderkey
+    except user_details.DoesNotExist:
+        return None
 
 
      

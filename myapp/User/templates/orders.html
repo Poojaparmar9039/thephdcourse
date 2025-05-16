@@ -1,0 +1,37 @@
+{% extends 'user_dashboard.html' %}
+
+{% block content %}
+{% if user.status == 'Completed' %}
+<div class="container mx-auto p-6">
+    <div class="bg-white shadow-md rounded-lg p-6 mb-6">
+        <div class="flex items-center justify-between mb-4">
+            <h2 class="text-2xl font-bold text-gray-800">Welcome, {{ user.fullname }}</h2>
+            <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">
+                Order Key: {{ user.orderkey }}
+            </span>
+        </div>
+        <div class="border-t border-gray-200 pt-4">
+            <p class="text-gray-600">Your account details and order information are displayed below.</p>
+            
+            <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="bg-gray-50 p-4 rounded-md">
+                    <h3 class="font-semibold text-gray-700 mb-2">Account Information</h3>
+                    <p><span class="text-gray-500">Name:</span> {{ user.fullname }}</p>
+                    <p><span class="text-gray-500">Email:</span> {{ user.email }}</p>
+                </div>
+                
+                <div class="bg-gray-50 p-4 rounded-md">
+                    <h3 class="font-semibold text-gray-700 mb-2">Order Details</h3>
+                    <p><span class="text-gray-500">Order Key:</span> {{ user.orderkey }}</p>
+                    <p><span class="text-gray-500">Status:</span> Razorpay </p>
+                    <p><span class="text-gray-500">Razorpay Order Id:</span> {{user.razorpay_order_id }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+{% else %}
+    <p><span class="text-gray-700 ">{{ message }}</span></p>
+{% endif %}
+{% endblock %}

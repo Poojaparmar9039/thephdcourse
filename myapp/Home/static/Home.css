@@ -75,6 +75,17 @@ body {
   padding: 0 5px;
 }
 
+.login-button{
+  padding: 10px!important;
+  position: absolute;
+  right: 2px;
+  top: 2px;
+  text-transform:none!important;
+  font-size: 15px!important;
+  border-radius: none;
+  background: black!important;
+}
+
 .research-phd-wrapper section {
   padding: 20px 20px;
   background-color: #0a0a0a;

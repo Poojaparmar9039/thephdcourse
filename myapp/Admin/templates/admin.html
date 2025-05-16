@@ -43,14 +43,29 @@
             <div class="col-md-3">
                 <div class="card text-white bg-primary">
                     <div class="card-body">
-                        <h5>Processing</h5>
-                        <p class="display-6">{{ processing_no }}</p>
+                        <h5>Total Accounts</h5>
+                        <p class="display-6">{{ total_accounts }}</p>
                     </div>
                 </div>
             </div>
         </div>
+        {% block content %}
         <div class="card">
-            <div class="card-header bg-dark text-white">User Purchase Details</div>
+            <div class="card-header bg-dark text-white ">User Purchase Details
+               <div class="accounts">
+                <form method="get">
+                    <label for="filter">Filter by Date:</label>
+                    <select name="date_filter" id="filter" onchange="this.form.submit()">
+                         <option value="">-- Select --</option>
+                         <option value="today" {% if request.GET.date_filter == 'today' %}selected{% endif %}>Today</option>
+                         <option value="yesterday" {% if request.GET.date_filter == 'yesterday' %}selected{% endif %}>Yesterday</option>
+                         <option value="month" {% if request.GET.date_filter == 'month' %}selected{% endif %}>This Month</option>
+                         <option value="year" {% if request.GET.date_filter == 'year' %}selected{% endif %}>This Year</option>
+                    </select>
+                </form>
+
+               </div>
+            </div>
             <div class="card-body">
                 <table class="table table-bordered table-hover">
                     <thead>
@@ -74,6 +89,7 @@
                 </table>
             </div>
         </div>
+        {% endblock %}
     </div>
 </body>
 </html>

@@ -80,6 +80,7 @@ a{
   box-shadow: var(--box-shadow);
   overflow: hidden;
   height: 100%;
+ 
 }
 
 .card-body {
@@ -132,8 +133,77 @@ a{
   font-weight: 600;
   font-size: 16px;
   border: none;
+  display: flex;
+  justify-content: space-between;
+}
+/* Main accounts container styling */
+.accounts {
+ 
+  padding: 7px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  font-family: 'Arial', sans-serif;
 }
 
+/* Form styling */
+.accounts form {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* Label styling */
+.accounts label {
+  font-weight: 600;
+  color: #333;
+  font-size: 14px;
+}
+
+/* Select dropdown styling */
+.accounts select {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: white;
+  color: #444;
+  font-size: 14px;
+  cursor: pointer;
+  outline: none;
+  min-width: 150px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+/* Select hover state */
+.accounts select:hover {
+  border-color: #aaa;
+}
+
+/* Select focus state */
+.accounts select:focus {
+  border-color: #4a90e2;
+  box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
+}
+
+/* Selected option styling */
+.accounts select option:checked {
+  background-color: #4a90e2;
+  color: white;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .accounts form {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .accounts select {
+    width: 100%;
+    min-width: unset;
+  }
+}
 /* Clean Table Styling */
 .table {
   width: 100%;

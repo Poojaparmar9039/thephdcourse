@@ -6,5 +6,5 @@ urlpatterns = [
     path("pending_accounts_page/",views.pending_accounts_page,name='pending_accounts_page'),
     path("completed_accounts_page/",views.completed_accounts_page,name='completed_accounts_page'),
     path("failed_accounts_page/",views.failed_accounts_page,name='failed_accounts_page'),
-
+    
 ]

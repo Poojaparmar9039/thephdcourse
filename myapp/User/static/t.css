@@ -102,6 +102,36 @@ header {
   width: 100%;
 }
 
+/* UPDATED: Progress bar in header */
+.progress-container {
+  display: flex;
+  align-items: center;
+  width: 200px;
+  height: 24px;
+  background-color: rgba(241, 241, 241, 0.2);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  position: relative;
+  margin-left: 20px;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: #4CAF50;
+  border-radius: 15px;
+  transition: width 0.3s ease-in-out;
+}
+
+.progress-container span {
+  position: absolute;
+  right: 10px;
+  color: white;
+  font-weight: bold;
+  font-size: 12px;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+}
+
 /* Hero Section */
 .hero {
   position: relative;
@@ -109,6 +139,10 @@ header {
   text-align: center;
   overflow: hidden;
   background: var(--bg-secondary);
+}
+.button-complete.completed {
+  color: green;
+  font-weight: bold;
 }
 
 .hero::before {
@@ -240,6 +274,8 @@ h1 {
 .chapters {
   padding: 40px 0 80px;
 }
+
+/* REMOVED: Original progress bar from chapters section */
 
 .chapter {
   background: var(--bg-card);
@@ -494,23 +530,6 @@ footer {
   border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-/* Progress Bar */
-.progress-container {
-  width: 100%;
-  height: 6px;
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 3px;
-  overflow: hidden;
-  margin-bottom: 20px;
-}
-
-.progress-bar {
-  height: 100%;
-  background: var(--gradient-accent);
-  border-radius: 3px;
-  transition: width 0.3s ease;
-}
-
 /* Responsive Design */
 @media screen and (max-width: 992px) {
   .features-grid {
@@ -527,6 +546,10 @@ footer {
   .nav-links {
     width: 100%;
     justify-content: center;
+  }
+
+  .progress-container {
+    margin: 10px auto;
   }
 
   h1 {
